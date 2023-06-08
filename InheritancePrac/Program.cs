@@ -10,13 +10,23 @@ namespace InheritancePrac
     {
         class Parent
         {
+            public static int counter = 0;
             public Parent() { Console.WriteLine("부모 생성자"); }
             public Parent(int param) { Console.WriteLine("Parent(int param)"); }
             public Parent(string param) { Console.WriteLine("Parent(string param)"); }
+
+            public void CountParent()
+            {
+                Parent.counter++;
+            }
         }
 
         class Child : Parent
         {
+            public void ConutChild()
+            {
+                Child.counter++;
+            }
             public Child() : base(10)
             {
                 Console.WriteLine("Child() : base(10)");
